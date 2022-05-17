@@ -1,0 +1,85 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+h1{
+    font-size: 2rem;
+    margin-bottom: 1.7rem;
+}
+
+img{
+    border-radius: 100px;
+}
+
+.container{
+    width: 850px;
+    height: 80vh;
+    display: flex;
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.164);   
+}
+
+.logo{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(90, 89, 89);
+    color: white;
+    border-radius: 10px 0 0 10px;
+}
+
+form{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    font-size: 1.5rem;
+    padding: 3rem;
+    overflow: hidden;
+    border-radius: 0 10px 10px 0;
+}
+
+label{
+    margin-bottom: 5px;
+    color: #555;
+}
+
+input{
+    width: 100%;
+    margin-bottom: 2rem;
+    height: 1.8rem;
+    border-radius: 10px;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, 0.26);
+    padding: 5px;
+}
+
+input[type="submit"]{
+   height: 2rem;
+   margin-top: 5px;
+   color: white;
+   font-weight: bolder;
+   background-color: rgb(121, 121, 121);
+   transition: all .3s;
+   cursor: pointer;
+}
+
+input[type="submit"]:hover{
+    background-color: #555;
+}
+
