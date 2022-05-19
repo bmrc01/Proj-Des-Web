@@ -1,0 +1,149 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 1.2rem;
+    font-family: Arial;
+}
+
+body {
+    background-image: linear-gradient(#68367c, #ffb1f2);
+    display: grid;
+    
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+.header {
+    background: #83519B;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.header > #imagem-logo{
+    height: 80px;
+    width: 80px;   
+}
+
+.header > a{
+    position: absolute;
+    left: 5.4rem;
+    font-variant: small-caps;
+    font-size: 2rem;
+    color: black;
+}
+
+.header > a:hover{
+    color: rgb(29, 27, 27);
+}
+
+#pesquisa{
+    margin-left: -16rem;
+    font-size: 0.9rem;
+    height: 30px;
+    width: 14rem;
+    padding: 5px; 
+}
+
+.header > label > img{
+    height: 20px;
+    width: 40px; 
+    position: absolute;
+    left: 39.5rem;
+    top: 1.7rem;
+} 
+
+.menu {
+    display: flex;
+    align-items: center;
+}
+
+.menu li {
+    margin-left: 10px;
+
+}
+
+.menu li a {
+    display: block;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+.menu > li > a > img{
+    height: 40px;
+    width: 40px; 
+}
+
+/* Conteúdo principal */
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+input[type="number"]{
+    width: 50px;
+}
+
+.title{
+    margin: 20px 0;
+    width: 960px;
+    display: flex; 
+    justify-content: space-around;
+    background-color: #CCCCCC;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px  rgba(0, 0, 0, 0.192);
+}
+
+.test{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: white;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px  rgba(0, 0, 0, 0.192);
+}
+
+.test img{
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.test input[type="number"]{
+    text-align: center;
+    padding: 5px;
+}
+
+
+footer{
+    width: 100%;
+    text-align: center;
+    background-color: rgb(211, 206, 206);
+    padding: 10px 0;
+}
+
+footer > ul > li > a> img{
+    height: 40px;
+    width: 40px;
+}
+
+#footer-icones{
+    display: flex;
+    justify-content: center;
+}
+
+#creditos li{
+    font-size: 0.9rem;
+}
