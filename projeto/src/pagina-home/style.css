@@ -77,6 +77,19 @@ a {
     width: 40px; 
 }
 
+#sair {
+    background-color: white;
+    margin-left: 235px;
+    font-size: 17px;
+    background-color: #83519B;
+    padding: 3px;
+}
+
+#sair:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 h1 {
     text-align: center;
     width: 100%;
