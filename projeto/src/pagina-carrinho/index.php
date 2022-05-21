@@ -40,11 +40,11 @@
         }
             $carrinho = $_SESSION['carrinho'];
             require_once('../conexao.php');
+            $counter = 0;
             foreach($carrinho as $item){        
                 $sql = "SELECT * FROM produto WHERE id = '$item'";
                 $resultado = $connection->query($sql);
-
-                $counter = 0;
+              
             foreach($resultado as $linha){
                 $id = $linha['id'];
                 $nome = $linha['nome'];
@@ -55,13 +55,14 @@
                     <input type="checkbox" name="rogerébom" id="rogerébom">
                     <label for="rogerébom">
                     <img src="../media/<?php echo $nome ?>.png" width="100px" height="100px"></label>
-                    <p id="preco">R$<?php echo $preco ?></p>          
-                    <input id="quantidade" type="number" value="1">                                                
-                    <p id="precoFinal">R$<?php echo $preco ?></p>
+                    <p id="preco<?php echo $counter ?>">R$<?php echo $preco ?></p>          
+                    <input id="quantidade<?php echo $counter ?>" type="number" value="1">                                                
+                    <p id="precoFinal<?php echo $counter ?>">R$<?php echo $preco ?></p>
                 </div>
                  
             <?php
-            }           
+            }  
+            $counter++;      
         }
     ?>      
     </main>
