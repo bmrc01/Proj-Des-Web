@@ -21,3 +21,8 @@
     foreach ($result as $row) {
         echo $row['nome'] . " " . $row['email'] . "<br>";
     }
+
+
+
+    $conn->close();
+?>
