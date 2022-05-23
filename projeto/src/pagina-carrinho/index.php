@@ -19,7 +19,7 @@
                 <li><a href="/"><img src="media/user.png"></a></li>
             </ul>
             <form action="../sair.php" method="post">
-                <input type="submit" value="Sair">
+                <input id="sair" type="submit" value="Sair">
             </form>
         </nav>
     </header>
