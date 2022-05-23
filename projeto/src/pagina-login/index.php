@@ -21,7 +21,7 @@
             <button type="submit" id="botao-input">Acessar</button>
         </form>
         <footer>
-            <p>Caso não possua login <a href="#">clique aqui</a></p>
+            <p>Caso não possua login <a href="../pagina-cadastro/">clique aqui</a></p>
         </footer>
     </main>
 
