@@ -15,7 +15,15 @@
         <input type="text" name="pesquisa" id="pesquisa" placeholder="Ex: Placa de Vídeo">
         <nav>
             <ul class="menu">
-                <li>Bem vindo, cliente!</li>
+            <?php
+                    session_start();
+                    if(isset($_SESSION['nome'])){
+                        echo 'Bem vindo, '.$_SESSION['nome'];
+                    }
+                    else{
+                        echo '<a href="../pagina-login/">Login</a>';
+                    }
+                ?>
                 <li><a href="/"><img src="media/user.png"></a></li>
             </ul>
             <form action="../sair.php" method="post">
@@ -24,6 +32,16 @@
         </nav>
     </header>
     <main class="container">
+        
+        <ul style="margin: auto">
+            <li class="finalizarLi">
+                <a href="../pagina-home/"><button class="btnFinalizar">Continuar Comprando</button></a>
+            </li>
+            <li class="finalizarLi">
+                <a href="../pagina-finaliza/"><button class="btnFinalizar">Finalizar Compra</button></a>
+            </li>
+        </ul>
+       
         <div class="title">
             <p>       </p>
             <p>Produtos</p>
@@ -33,7 +51,9 @@
         </div>
 
         <?php      
-        session_start();
+        if(!isset($_SESSION)){
+            session_start();
+        }
 
         if(!isset($_SESSION['nome'])){
             header('Location: ../pagina-login/index.php');
@@ -52,7 +72,9 @@
                 
                 ?>
                  <div class="test">
-                    <input type="checkbox" name="rogerébom" id="rogerébom">
+                    <a href="../removeProduto.php?id=<?php echo $id ?>">
+                        <button style="margin-left: -30px; margin-right: -100px">Remover</button>
+                    </a>
                     <label for="rogerébom">
                     <img src="../media/<?php echo $nome ?>.png" width="100px" height="100px"></label>
                     <p id="preco<?php echo $counter ?>">R$<?php echo $preco ?></p>          

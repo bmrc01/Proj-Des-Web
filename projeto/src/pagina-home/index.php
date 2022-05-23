@@ -24,13 +24,26 @@
                     if(isset($_SESSION['nome'])){
                         echo 'Bem vindo, '.$_SESSION['nome'];
                     }
+                    else{
+                        echo '<a href="../pagina-login/">Login</a>';
+                    }
                 ?>
                 <li><a href="/"><img src="../media/user.png"></a></li>
+                <?php //TALVEZ REMOVER O CARRINHO E COLOCAR EM OUTRO LUGAR
+                if(!isset($_SESSION)){
+                    session_start();
+                }
+                if(isset($_SESSION['carrinho'])){
+                    if(count($_SESSION['carrinho']) > 0){
+                        echo '<li><a href="../pagina-carrinho/"><img src="../media/carrinho.png"></a></li>';
+                    }
+                }
+                ?>
+
             </ul>
             <form action="../sair.php" method="post">
                 <input id="sair" type="submit" value="Sair">
-            </form>
-            
+            </form>       
         </nav>
     </header>
     <main class="container">
@@ -53,9 +66,12 @@
 
                 ?>
                 <div class="img-container">
-                    <a href='../adicionaProduto.php?id=<?php echo $id ?>'><img src="../media/<?php echo $nome; ?>.png"></a>
-                    <p><?php echo $nome; ?></p>
-                    <p>R$<?php echo $preco; ?></p>
+                    <img src="../media/<?php echo $nome; ?>.png">
+                    <p class="nomeProduto"><?php echo $nome; ?></p>
+                    <p class="precoProduto">R$<?php echo $preco; ?></p>
+                    <a href='../adicionaProduto.php?id=<?php echo $id ?>'>
+                        <button class="btnComprar">Comprar</button>
+                    </a>
                 </div>
 
             <?php
