@@ -11,24 +11,27 @@
     <header class="header">
         <img src="media/icon.png" id="imagem-logo">
         <a href="../pagina-home/">DionisioTech</a>
-        <label for="pesquisa"><img src="media/lupa.png"></label>
         <input type="text" name="pesquisa" id="pesquisa" placeholder="Ex: Placa de Vídeo">
         <nav>
             <ul class="menu">
             <?php
-                    session_start();
-                    if(isset($_SESSION['nome'])){
-                        echo 'Bem vindo, '.$_SESSION['nome'];
-                    }
-                    else{
-                        echo '<a href="../pagina-login/">Login</a>';
-                    }
+                if(!isset($_SESSION['usuario'])){
+                session_start();
+                }
+                if(isset($_SESSION['nome'])){
+                    echo '<li>
+                            <p>Bem vindo, '.$_SESSION['nome'].'<p>
+                            <form action="../sair.php" method="post">
+                                <input id="sair" type="submit" value="Sair">
+                            </form>  
+                        </li>';
+                }
+                else{
+                    echo '<a href="../pagina-login/">Login</a>';
+                }
                 ?>
                 <li><a href="/"><img src="media/user.png"></a></li>
             </ul>
-            <form action="../sair.php" method="post">
-                <input id="sair" type="submit" value="Sair">
-            </form>
         </nav>
     </header>
     <main class="container">

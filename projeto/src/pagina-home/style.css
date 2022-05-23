@@ -28,6 +28,12 @@ a {
   width: 80px;
 }
 
+#lupa {
+  height: 30px;
+  width: 30px;
+  margin: 0 25px;
+}
+
 .header > a {
   position: absolute;
   left: 5.4rem;
@@ -41,7 +47,6 @@ a {
 }
 
 #pesquisa {
-  margin-left: -16rem;
   font-size: 0.9rem;
   height: 30px;
   width: 13rem;
@@ -78,10 +83,10 @@ a {
 
 #sair {
   background-color: white;
-  margin-left: 235px;
+  margin-left: 0px;
   font-size: 17px;
   background-color: #83519b;
-  padding: 3px;
+  padding: 0px;
 }
 
 #sair:hover {
@@ -126,7 +131,8 @@ img {
   background-color: rgb(255, 255, 255);
   justify-content: center;
   align-items: center;
-  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.027);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
 }
 
 .flex > .img-container > img {
@@ -173,6 +179,7 @@ footer > ul > li > a > img {
   color: white;
   cursor: pointer;
   padding: 10px;
+  border-radius: 15px;
 }
 
 .btnComprar:hover {

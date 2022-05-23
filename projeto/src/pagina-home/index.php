@@ -13,7 +13,6 @@
     <header class="header">
         <img src="../media/icon.png" id="imagem-logo">
         <a href="../pagina-home/">DionisioTech</a>
-        <label for="pesquisa"><img src="../media/lupa.png"></label>
         <input type="text" name="pesquisa" id="pesquisa" placeholder="Ex: Placa de Vídeo">
         <nav>
             <ul class="menu">
@@ -22,13 +21,19 @@
                     session_start();
                     }
                     if(isset($_SESSION['nome'])){
-                        echo 'Bem vindo, '.$_SESSION['nome'];
+                        echo '<li>
+                                <p>Bem vindo, '.$_SESSION['nome'].'<p>
+                                <form action="../sair.php" method="post">
+                                    <input id="sair" type="submit" value="Sair">
+                                </form>  
+                                </li>';
                     }
                     else{
                         echo '<a href="../pagina-login/">Login</a>';
                     }
                 ?>
                 <li><a href="/"><img src="../media/user.png"></a></li>
+
                 <?php //TALVEZ REMOVER O CARRINHO E COLOCAR EM OUTRO LUGAR
                 if(!isset($_SESSION)){
                     session_start();
@@ -37,13 +42,9 @@
                     if(count($_SESSION['carrinho']) > 0){
                         echo '<li><a href="../pagina-carrinho/"><img src="../media/carrinho.png"></a></li>';
                     }
-                }
-                ?>
-
-            </ul>
-            <form action="../sair.php" method="post">
-                <input id="sair" type="submit" value="Sair">
-            </form>       
+                }        
+                ?>        
+            </ul>                
         </nav>
     </header>
     <main class="container">
