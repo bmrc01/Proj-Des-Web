@@ -10,7 +10,7 @@
   <body>
     <header class="header">
         <img src="media/icon.png" id="imagem-logo">
-        <a href="/">DionisioTech</a>
+        <a href="../pagina-home/">DionisioTech</a>
         <label for="pesquisa"><img src="media/lupa.png"></label>
         <input type="text" name="pesquisa" id="pesquisa" placeholder="Ex: Placa de Vídeo">
         <nav>

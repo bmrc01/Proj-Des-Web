@@ -12,12 +12,19 @@
 <body>
     <header class="header">
         <img src="../media/icon.png" id="imagem-logo">
-        <a href="/">DionisioTech</a>
+        <a href="../pagina-home/">DionisioTech</a>
         <label for="pesquisa"><img src="../media/lupa.png"></label>
         <input type="text" name="pesquisa" id="pesquisa" placeholder="Ex: Placa de Vídeo">
         <nav>
             <ul class="menu">
-                <li>Bem vindo, cliente!</li>
+                <?php
+                    if(!isset($_SESSION['usuario'])){
+                    session_start();
+                    }
+                    if(isset($_SESSION['nome'])){
+                        echo 'Bem vindo, '.$_SESSION['nome'];
+                    }
+                ?>
                 <li><a href="/"><img src="../media/user.png"></a></li>
             </ul>
             <form action="../sair.php" method="post">
@@ -31,14 +38,14 @@
         <section class="flex">
 
             <?php
-            if(isset($_SESSION)){
+            if(!isset($_SESSION)){
                 session_start();
             }
             
             require_once('../conexao.php');
-            $sql = "SELECT * FROM produto";
+            $sql = "SELECT * FROM produto ORDER BY RAND()";
             $resultado = $connection->query($sql);
-            
+
             foreach($resultado as $linha){
                 $id = $linha['id'];
                 $nome = $linha['nome'];
@@ -48,32 +55,7 @@
                 <div class="img-container">
                     <a href='../adicionaProduto.php?id=<?php echo $id ?>'><img src="../media/<?php echo $nome; ?>.png"></a>
                     <p><?php echo $nome; ?></p>
-                    <p><?php echo $preco; ?></p>
-                </div>
-                <div class="img-container">
-                    <a href='../adicionaProduto.php?id=<?php echo $id ?>'><img src="../media/<?php echo $nome; ?>.png"></a>
-                    <p><?php echo $nome; ?></p>
-                    <p><?php echo $preco; ?></p>
-                </div>
-                <div class="img-container">
-                    <a href='../adicionaProduto.php?id=<?php echo $id ?>'><img src="../media/<?php echo $nome; ?>.png"></a>
-                    <p><?php echo $nome; ?></p>
-                    <p><?php echo $preco; ?></p>
-                </div>
-                <div class="img-container">
-                    <a href='../adicionaProduto.php?id=<?php echo $id ?>'><img src="../media/<?php echo $nome; ?>.png"></a>
-                    <p><?php echo $nome; ?></p>
-                    <p><?php echo $preco; ?></p>
-                </div>
-                <div class="img-container">
-                    <a href='../adicionaProduto.php?id=<?php echo $id ?>'><img src="../media/<?php echo $nome; ?>.png"></a>
-                    <p><?php echo $nome; ?></p>
-                    <p><?php echo $preco; ?></p>
-                </div>
-                <div class="img-container">
-                    <a href='../adicionaProduto.php?id=<?php echo $id ?>'><img src="../media/<?php echo $nome; ?>.png"></a>
-                    <p><?php echo $nome; ?></p>
-                    <p><?php echo $preco; ?></p>
+                    <p>R$<?php echo $preco; ?></p>
                 </div>
 
             <?php
@@ -84,9 +66,9 @@
     </main>
     <footer>
         <ul id="footer-icones">
-            <li><a href="#"><img src="media/twitter.png"></a></li>
-            <li><a href="#"><img src="media/instagram.png"></a></li>
-            <li><a href="#"><img src="media/facebook.png"></a></li>
+            <li><a href="#"><img src="../media/twitter.png"></a></li>
+            <li><a href="#"><img src="../media/instagram.png"></a></li>
+            <li><a href="#"><img src="../media/facebook.png"></a></li>
         </ul>
         <ul id="creditos">
             <li>DionisioTech@gmail.com</li>
@@ -96,9 +78,9 @@
     </footer>
 
     <?php
-    if(isset($_SESSION)){
-session_start();
-}
+    if(!isset($_SESSION)){
+        session_start();
+    }
 
     ?>
 
